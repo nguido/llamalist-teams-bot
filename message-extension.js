@@ -9,21 +9,19 @@ class MessageExtension extends TeamsActivityHandler {
         const link = action.messagePayload
             ? action.messagePayload.linkToMessage
             : ''
-        // db3d-2600-6c52-7900-7b-451-18aa-1ad0-435c.ngrok.io
-        const ooEndpoint = encodeURI(
-            `https://office-otter-be.herokuapp.com/api/v1/msteams/?msUserId=${msUserId}&message=${message}&link=${link}`
-        )
 
+        const llamaExtensionEndpoint = encodeURI(
+            `https://a2a7-2600-6c52-7900-7b-215a-bd04-92e3-8cf5.ngrok-free.app/teamsExtension/?msUserId=${msUserId}&message=${message}&link=${link}`
+        )
         if (message !== '' && link !== '') {
             return {
                 task: {
                     type: 'continue',
                     value: {
-                        width: 600,
-                        height: 700,
-                        title: 'Create a Task in Office Otter',
-                        url: ooEndpoint,
-                        fallbackUrl: ooEndpoint,
+                        width: 500,
+                        height: 400,
+                        url: llamaExtensionEndpoint,
+                        title: 'Create a Task in Llama Llist',
                     },
                 },
             }
