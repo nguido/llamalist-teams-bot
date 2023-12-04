@@ -1,0 +1,68 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.14/MicrosoftTeams.schema.json",
+    "version": "1.0.0",
+    "manifestVersion": "1.14",
+    "id": "919bf197-4385-43d8-9dd7-e762c2857ef5",
+    "packageName": "com.package.name",
+    "name": {
+        "short": "Office Otter",
+        "full": "Office Otter for Microsoft Teams"
+    },
+    "developer": {
+        "name": "Office Otter",
+        "mpnId": "",
+        "websiteUrl": "https://www.officeotter.com",
+        "privacyUrl": "https://app.officeotter.com/privacy",
+        "termsOfUseUrl": "https://app.officeotter.com/tos"
+    },
+    "description": {
+        "short": "Convert Microsoft Teams messages into tasks in Office Otter",
+        "full": "Welcome to Office Otter!\n\nMeet our new Microsoft Teams integration. \n\nTurn any message into a task by navigating to the \"more actions\" button on the message bubble and simply click \"Create Task in Office Otter.\"\n\nYou must be an Office Otter user in order to use this add-in. To create an account [sign up here](https://app.officeotter.com/signup)\n\nFor more information, please visit [www.officeotter.com](https://www.officeotter.com) "
+    },
+    "icons": {
+        "outline": "outline.png",
+        "color": "color.png"
+    },
+    "accentColor": "#ffffff",
+    "staticTabs": [
+        {
+            "entityId": "d0046537-3cfe-4c4a-8b78-e7ffc568fb78",
+            "name": "Office Otter",
+            "contentUrl": "https://office-otter-be.herokuapp.com/api/msteams/about",
+            "websiteUrl": "https://office-otter-be.herokuapp.com/api/msteams/about",
+            "scopes": ["personal"]
+        },
+        {
+            "entityId": "about",
+            "scopes": ["personal"]
+        }
+    ],
+    "composeExtensions": [
+        {
+            "botId": "1c0363c3-d99e-41ea-ab1a-8967cbfb4547",
+            "commands": [
+                {
+                    "id": "createTask",
+                    "type": "action",
+                    "title": "Create Task in Office Otter",
+                    "description": "Create Task in Office Otter",
+                    "initialRun": true,
+                    "fetchTask": true,
+                    "context": ["message"],
+                    "taskInfo": {
+                        "title": "Create Task in Office Otter",
+                        "width": "800",
+                        "height": "800",
+                        "url": "https://office-otter-be.herokuapp.com/api/msteams"
+                    }
+                }
+            ],
+            "canUpdateConfiguration": true
+        }
+    ],
+    "validDomains": ["office-otter-be.herokuapp.com"],
+    "webApplicationInfo": {
+        "id": "919bf197-4385-43d8-9dd7-e762c2857ef5",
+        "resource": ""
+    }
+}
