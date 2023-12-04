@@ -11,7 +11,7 @@ class MessageExtension extends TeamsActivityHandler {
             : ''
 
         const llamaExtensionEndpoint = encodeURI(
-            `https://af7b-2600-6c52-7900-7b-8c1b-d9d7-a0ad-cb2b.ngrok-free.app/teams/message-extension?message=${message}&link=${link}`
+            `https://app.llamalist.com/teams/message-extension?message=${message}&link=${link}`
         )
         if (message !== '' && link !== '') {
             return {
