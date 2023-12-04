@@ -25,14 +25,6 @@ app.post('/api/messages', (req, res) => {
     }
 })
 
-app.get('/test', (req, res) => {
-    try {
-        return res.send('i am the test')
-    } catch (error) {
-        console.log(error)
-    }
-})
-
 app.use((req, res, next) => {
     let err = new Error('Not Found')
     err.status = 404
