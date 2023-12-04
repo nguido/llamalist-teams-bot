@@ -1,0 +1,64 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.16/MicrosoftTeams.schema.json",
+    "version": "1.0.0",
+    "manifestVersion": "1.16",
+    "id": "bdb4aacf-8f67-4240-9593-45e3e59676f9",
+    "packageName": "com.package.name",
+    "name": {
+        "short": "Llama List",
+        "full": "Llama List for Teams"
+    },
+    "developer": {
+        "name": "Llama List Inc.",
+        "mpnId": "",
+        "websiteUrl": "https://llamalist.com",
+        "privacyUrl": "https://app.llamalist.com/privacy",
+        "termsOfUseUrl": "https://app.llamalist.com/tos"
+    },
+    "description": {
+        "short": "Create tasks in Llama List from within Teams",
+        "full": "Manage your tasks"
+    },
+    "icons": {
+        "outline": "outline.png",
+        "color": "color.png"
+    },
+    "accentColor": "#FFFFFF",
+    "staticTabs": [
+        {
+            "entityId": "e598e25b-b608-4eb0-b221-9c4d3066d223",
+            "name": "Home",
+            "contentUrl": "https://9b75-2600-6c52-7900-7b-e15e-f15-676-6e52.ngrok-free.app",
+            "websiteUrl": "https://9b75-2600-6c52-7900-7b-e15e-f15-676-6e52.ngrok-free.app",
+            "scopes": ["personal"]
+        },
+        {
+            "entityId": "about",
+            "scopes": ["personal"]
+        }
+    ],
+    "composeExtensions": [
+        {
+            "botId": "3831a8c5-d375-4eb4-8686-31ae4ba8e01f",
+            "commands": [
+                {
+                    "id": "createTask",
+                    "type": "action",
+                    "title": "Create Task",
+                    "description": "Create Task in Llama List",
+                    "initialRun": true,
+                    "fetchTask": true,
+                    "context": ["message"],
+                    "taskInfo": {
+                        "title": "Create Task in Llama List",
+                        "width": "600",
+                        "height": "200",
+                        "url": "https://9b75-2600-6c52-7900-7b-e15e-f15-676-6e52.ngrok-free.app/teams/message-extension"
+                    }
+                }
+            ],
+            "canUpdateConfiguration": true
+        }
+    ],
+    "validDomains": []
+}
